@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorSample", "RazorSample\RazorSample.csproj", "{1C3EB21B-C34E-4BCF-93EC-75C1F72D9687}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessManager\BusinessLayer.csproj", "{53105947-50C5-42A9-8CD2-442C420EACC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C3EB21B-C34E-4BCF-93EC-75C1F72D9687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C3EB21B-C34E-4BCF-93EC-75C1F72D9687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C3EB21B-C34E-4BCF-93EC-75C1F72D9687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C3EB21B-C34E-4BCF-93EC-75C1F72D9687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53105947-50C5-42A9-8CD2-442C420EACC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53105947-50C5-42A9-8CD2-442C420EACC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53105947-50C5-42A9-8CD2-442C420EACC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53105947-50C5-42A9-8CD2-442C420EACC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

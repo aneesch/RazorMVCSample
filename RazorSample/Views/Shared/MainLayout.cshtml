@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @RenderSection("HeaderContent")
+    <link href="@Url.Content("~/Content/Styles/Main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Styles/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="top-buffer col-md-12 h4">
+        <span class="pull-left">
+            <ul class=" list-inline">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            </ul>
+        </span>
+        <span class="pull-right">
+            <ul class=" list-inline">
+                @if (Session != null && Session["StaffID"] != null)
+                {
+                    <li>@Html.ActionLink(HttpContext.Current.Session["StaffName"].ToString(), "AccountHome", "Account", routeValues: null, htmlAttributes: new { id = "accountHomeLink", @class = "validation-success" })</li>
+                    <li>@Html.ActionLink("Sign out", "Logout", "Account", routeValues: null, htmlAttributes: new { id = "logoutLink" })</li>                    
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                }
+            </ul>
+        </span>
+    </div>    
+    <div class="content-box col-md-12">
+        <div><h3>@ViewBag.PageHeading</h3></div>
+        <div class="new-content">
+            @RenderBody()
+        </div>        
+    </div>
+    <div class="content-footer col-md-12">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        @RenderSection("FooterContent")
+    </div>
+</body>
+</html>
+
+
+
+

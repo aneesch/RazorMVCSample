@@ -1,0 +1,33 @@
+﻿@model RazorSample.Models.AccountHomeModel
+@section HeaderContent{
+}
+
+@{
+    ViewBag.Title = "Account Home";
+    ViewBag.PageHeading = "My Account";
+}
+
+<div class="col-md-3">
+    Welcome <b>@ViewBag.GenderPrefix @ViewBag.StaffName</b>,
+</div>
+
+<div class="col-md-3">
+    <table class="table borderless">
+        <tr>
+            <td>ID</td>
+            <td>@ViewBag.StaffID</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>@ViewBag.StaffName</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@ViewBag.StaffEmail</td>
+        </tr>
+    </table>
+</div>
+
+@section FooterContent{
+@Html.ActionLink("Go To Stafff Listing Page", "StaffListing")
+}

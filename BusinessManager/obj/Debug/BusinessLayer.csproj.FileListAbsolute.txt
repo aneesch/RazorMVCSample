@@ -1,0 +1,6 @@
+E:\Tiek\ASP.NET\RazorSample\BusinessManager\bin\BusinessManager.dll.config
+E:\Tiek\ASP.NET\RazorSample\BusinessManager\bin\BusinessManager.dll
+E:\Tiek\ASP.NET\RazorSample\BusinessManager\bin\BusinessManager.pdb
+E:\Tiek\ASP.NET\RazorSample\BusinessManager\obj\Debug\BusinessManager.dll
+E:\Tiek\ASP.NET\RazorSample\BusinessManager\obj\Debug\BusinessManager.pdb
+E:\Tiek\ASP.NET\RazorSample\BusinessManager\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache

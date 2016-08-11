@@ -1,0 +1,67 @@
+﻿@section HeaderContent{
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+}
+
+@{
+    ViewBag.Title = "StaffListing";
+    ViewBag.PageHeading = "Staff Listing";
+}
+
+<div class="col-md-6">
+    <table id="example" class="display" cellspacing="0">
+        <thead>
+            <tr>
+                <th>StaffID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>DOB</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Languages</th>
+                <th>Country</th>
+                <th>Username</th>
+            </tr>
+        </thead>        
+    </table>
+</div>
+
+@section FooterContent{
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+
+    <script>
+        var ajaxurl = '@Url.Action("GetStaffInfo", "Account")';
+        
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "bFilter": false,
+                "info": true,
+                "paging": false,
+                "lengthMenu": [[10, 20, 50, -1], [10, 20, 50, "All"]],
+                "ajax": {
+                    "url": ajaxurl,
+                    "type": "POST",
+                    "dataSrc": function (json) {
+                        return json.data;
+                    }
+                },
+                "columns": [
+                    { "data": "StaffID"},
+                    { "data": "Name"},
+                    { "data": "Gender"},
+                    { "data": "DOB"},
+                    { "data": "Phone"},
+                    { "data": "Email"},
+                    { "data": "Languages" },
+                    { "data": "Country" },
+                    { "data": "Username" }
+                ]
+            });
+        });
+        $('#example').on('xhr.dt', function (e, settings, json, xhr) {
+            // data returned from ajax
+        });
+    </script>
+    
+}

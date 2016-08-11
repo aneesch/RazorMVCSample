@@ -1,0 +1,122 @@
+﻿@model RazorSample.Models.RegistrationModel
+
+@section HeaderContent{
+}
+
+@{
+    ViewBag.Title = "Registration";
+}
+
+@{
+    ViewBag.PageHeading = "Registration";
+}
+<div class="register-container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            @using (Html.BeginForm("RegistrationForm"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessage("Name", "", new { @class = "validation-error" })
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Gender)
+                </div>
+                <div class="editor-field">
+                    @Html.RadioButtonFor(model => model.Gender, "Male", new { @checked = true }) Male
+                    @Html.RadioButtonFor(model => model.Gender, "Female") Female
+                    @Html.ValidationMessageFor(model => model.Gender)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DOB)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.DOB, new { @class = "form-control" })
+                    @Html.ValidationMessage("DOB", "", new { @class = "validation-error" })
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Phone)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+                    @Html.ValidationMessage("Phone", "", new { @class = "validation-error" })
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                    @Html.ValidationMessage("Email", "", new { @class = "validation-error" })
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Languages)
+                </div>
+                <div class="editor-field">
+                    @Html.ListBoxFor(model => model.Languages,
+                         new SelectListItem[]{
+                            new SelectListItem() {Text = "English", Value="English"},
+                            new SelectListItem() {Text = "Arabic", Value="Arabic"}},
+                        new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Languages)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Country)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.Country,
+                         new SelectListItem[]{
+                            new SelectListItem() {Text = "India", Value="India"},
+                            new SelectListItem() {Text = "China", Value="China"},
+                            new SelectListItem() {Text = "Japan", Value="Japan"}},
+                        new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Country)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Username)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+                    @Html.ValidationMessage("Username", "", new { @class = "validation-error" })
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                    @Html.ValidationMessage("Password", "", new { @class = "validation-error" })
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ConfirmPassword)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                    @Html.ValidationMessage("ConfirmPassword", "", new { @class = "validation-error" })
+                </div>
+                <div class="editor-field">                    
+                    @Html.CheckBoxFor(model => model.AgreePolicy)
+                    @Html.LabelFor(model => model.AgreePolicy)
+                </div>
+                <p>
+                    <input type="submit" value="Register" class="btn btn-success" />
+                </p>
+            }
+        </div>
+    </div>
+</div>
+
+@section FooterContent{
+    @Html.ActionLink("Back to List", "Index")
+}

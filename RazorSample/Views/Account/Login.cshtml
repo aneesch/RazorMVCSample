@@ -1,0 +1,41 @@
+﻿@model RazorSample.Models.LoginModel
+@section HeaderContent{
+}
+
+@{
+    ViewBag.Title = "Login";
+    ViewBag.PageHeading = "Login";
+}
+
+<div class="register-container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)                
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Username)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+                    @Html.ValidationMessage("Username","", new { @class = "validation-error" })
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                    @Html.ValidationMessage("Password","", new { @class = "validation-error" })
+                </div>
+                <p>
+                    <input type="submit" value="Login" class="btn btn-success" />
+                </p>
+            }
+        </div>
+    </div>
+</div>
+
+@section FooterContent{
+}
